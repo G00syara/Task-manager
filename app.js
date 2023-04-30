@@ -17,14 +17,14 @@ app.use(express.json()) //use промежуточное ПО
 
 app.use('/api/v1/tasks', tasks)
 
-app.use(notFound) //Проверка на нахождение страницы с таким URL
+app.use(notFound) //Выводит ошибку если искать страницы после :3000, т.е. :3000/dasd
 app.use(errorHandlerMiddleware) //Проверка на ошибки
 const port = process.env.PORT || 3000
 
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI)
-    app.listen(port, console.log(`server is listening port ${port}...`))
+    app.listen(port, console.log(`server is listening port ${port}...`)) //Привязки и прослушки на указанном соеденений или порту
   } catch (error) {
     console.log(error)
   }

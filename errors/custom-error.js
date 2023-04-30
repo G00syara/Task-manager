@@ -1,4 +1,5 @@
 class CustomAPIError extends Error {
+  //Кастомная ошибка
   constructor(message, statusCode) {
     super(message)
     this.statusCode = statusCode

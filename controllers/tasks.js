@@ -1,5 +1,5 @@
 const Task = require('../models/Task')
-const asyncWrapper = require('../middleware/async') // Обёртка функции, чтобы постоянно не писать try,catch
+const asyncWrapper = require('../middleware/async') // Обёртка обратки ошибок, чтобы постоянно не писать try,catch
 const { createCustomError } = require('../errors/custom-error')
 
 const getAllTasks = asyncWrapper(async (req, res) => {
